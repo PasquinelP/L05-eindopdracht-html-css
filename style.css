@@ -27,6 +27,12 @@ footer {
   text-transform: uppercase;
 }
 
+.logo-link,
+.menu a {
+  text-decoration: none;
+  color: #000;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -42,9 +48,12 @@ footer {
 }
 
 .logo {
+  flex-shrink: 0;
+}
+
+.logo-link {
   display: flex;
   flex-direction: column;
-  flex-shrink: 0;
 }
 
 .brand,
@@ -64,7 +73,7 @@ footer {
 .subtitle {
   font-size: 14px;
   letter-spacing: 1px;
-  columns: #808080;
+  color: #808080;
 }
 
 .site-nav {
@@ -75,6 +84,7 @@ footer {
   display: flex;
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
 .menu li {
@@ -85,15 +95,22 @@ footer {
   margin-right: 0;
 }
 
-.menu a {
-  text-decoration: none;
+.tagline {
+    margin-top: 86px;
 }
+
+.tagline h1 {
+  font-size: 30px;
+  text-align: center;
+  margin: 0;
+}
+
 
 .container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 80px 1fr 60px;
-  grid-gap: 20px;
+  grid-template-rows: 1fr 2fr 1fr 60px;
+  gap: 10px;
   height: 100%;
 }
 
