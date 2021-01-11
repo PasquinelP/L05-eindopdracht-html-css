@@ -1,3 +1,7 @@
+/* ------------------------------- 
+             $Base 
+   ------------------------------- */
+
 * {
   box-sizing: border-box;
 }
@@ -7,6 +11,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  color: #222;
 }
 
 body {
@@ -27,10 +32,31 @@ footer {
   text-transform: uppercase;
 }
 
-.logo-link,
+a {
+  text-decoration: none;
+  color: #222;
+  transition: color 0.5s ease-in-out;
+}
+
+a.current-page {
+  color: green;
+  text-decoration: solid underline 2px;
+  text-underline-offset: 4px;
+}
+
+/* .logo-link,
 .menu a {
   text-decoration: none;
-  color: #000;
+  color: #222;
+} */
+
+/* ------------------------------- 
+             $Header 
+   ------------------------------- */
+
+header {
+  grid-area: header;
+  margin-bottom: 80px;
 }
 
 .header {
@@ -88,7 +114,7 @@ footer {
 }
 
 .menu li {
-  margin-right: 15px;
+  margin-right: 10px;
 }
 
 .menu li:last-child {
@@ -96,28 +122,79 @@ footer {
 }
 
 .tagline {
-    margin-top: 86px;
-}
-
-.tagline h1 {
-  font-size: 30px;
-  text-align: center;
-  margin: 0;
-}
-
-
-.container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 2fr 1fr 60px;
-  gap: 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background: rgb(177, 190, 193) url(img/gr-fr-dr-tagline.jpg) center right
+    no-repeat;
+  background-size: cover;
   height: 100%;
 }
 
+/* .tagline::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+} */
+
+.tagline h1 {
+  display: flex;
+  flex-direction: column;
+  font-size: 30px;
+  text-align: center;
+  margin: 0;
+  color: #fff;
+  padding: 6px;
+  background-color: rgba(23, 23, 23, 0.6);
+}
+
+.tagline h1 span:nth-child(2) {
+  font-size: 22px;
+  font-weight: normal;
+}
+
+/* ------------------------------- 
+             $Layout 
+   ------------------------------- */
+
+.container {
+  height: 100%;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 2fr 1fr 60px;
+  grid-template-areas:
+    "header"
+    "main"
+    "aside"
+    "footer";
+}
+
+main {
+  grid-area: main;
+  padding: 0 20px;
+}
+
+aside {
+  grid-area: aside;
+  padding: 0 20px;
+}
+
+/* Footer */
+
 footer {
+  grid-area: footer;
   background-color: #000;
   color: #fff;
-  padding: 10px 15px;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
   font-family: "Oswald", sans-serif;
