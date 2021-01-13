@@ -262,6 +262,10 @@ aside {
   border-top: 1px solid rgb(177, 190, 193);
 }
 
+aside img {
+  max-width: 280px;
+}
+
 .img-description {
   font-size: 14px;
   font-style: italic;
