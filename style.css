@@ -36,15 +36,26 @@ h2 {
   font-size: 22px;
 }
 
-/* video {
-  max-width: 100%;
-  height: auto;
-} */
+h3 {
+  font-size: 20px;
+  text-transform: none;
+}
 
 a {
   text-decoration: none;
+  color: #028642;
+  transition: all 0.5s ease-in-out;
+}
+
+.logo-link,
+.menu a {
+  text-decoration: none;
   color: #222;
-  transition: color 0.5s ease-in-out;
+}
+
+a.social-media {
+  color: #fff;
+  background-color: #222;
 }
 
 a.current-page,
@@ -55,6 +66,11 @@ a:hover {
 }
 
 .logo a:hover {
+  text-decoration: none;
+}
+
+a.social-media:hover {
+  background-color: #028642;
   text-decoration: none;
 }
 
@@ -225,7 +241,6 @@ main {
 
 .card-footer {
   font-size: 16px;
-  /* background-color: #082a67; */
   background-color: #0d44a8;
   color: #fff;
   padding: 4px 10px;
@@ -242,7 +257,57 @@ main {
 
 aside {
   grid-area: aside;
-  padding: 20px;
+  margin: 0 20px;
+  padding: 20px 0;
+  border-top: 1px solid rgb(177, 190, 193);
+}
+
+.img-description {
+  font-size: 14px;
+  font-style: italic;
+  margin: 0;
+}
+
+.social-media-container {
+  display: flex;
+  justify-content: center;
+}
+
+.social-media {
+  border-radius: 50%;
+  height: 64px;
+  width: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.video-wrapper {
+  margin-bottom: 40px;
+}
+
+/* Youtube container */
+/* to make Youtube embed video responsive */
+
+.youtube-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.youtube-container iframe,
+.youtube-container object,
+.youtube-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* Footer */
@@ -257,6 +322,10 @@ footer {
   font-family: "Oswald", sans-serif;
   font-size: 12px;
   letter-spacing: 1px;
+}
+
+.product {
+  margin-bottom: 40px;
 }
 
 /* Form */
@@ -315,9 +384,39 @@ footer {
   cursor: pointer;
 }
 
+.contact-info {
+  margin-bottom: 80px;
+  text-align: center;
+}
+
 /* ------------------------------- 
           $Media queries
    ------------------------------- */
+
+@media (min-width: 580px) {
+  .product {
+    clear: both;
+  }
+
+  .product img {
+    margin-bottom: 20px;
+  }
+
+  .product .vlag-groningen {
+    float: left;
+    margin-right: 20px;
+  }
+
+  .product .vlag-friesland {
+    float: right;
+    margin-left: 20px;
+  }
+
+  .product .vlag-drenthe {
+    float: left;
+    margin-right: 20px;
+  }
+}
 
 @media (min-width: 768px) {
   body {
@@ -339,6 +438,10 @@ footer {
     float: right;
   }
 
+  .video-wrapper {
+    width: 80%;
+  }
+
   .contactform {
     width: 80%;
   }
@@ -347,6 +450,10 @@ footer {
 @media (min-width: 980px) {
   h2 {
     font-size: 24px;
+  }
+
+  h3 {
+    font-size: 22px;
   }
 
   .brand {
@@ -383,7 +490,19 @@ footer {
   }
 
   aside {
+    margin: 0;
+    padding: 20px;
+    border-top: none;
     border-left: 1px solid rgb(177, 190, 193);
+  }
+
+  .video-wrapper {
+    width: 100%;
+  }
+
+  .social-media-container {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
